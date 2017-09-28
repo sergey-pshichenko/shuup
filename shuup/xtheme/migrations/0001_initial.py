@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('view_name', models.CharField(db_index=True, max_length=64, verbose_name='view name')),
                 ('created_on', models.DateTimeField(auto_now_add=True, verbose_name='created on')),
                 ('status', enumfields.fields.EnumIntegerField(db_index=True, enum=shuup.xtheme.models.SavedViewConfigStatus, verbose_name='status')),
-                ('_data', shuup.core.fields.TaggedJSONField(db_column=b'data', default=dict, verbose_name='internal data')),
+                ('_data', shuup.core.fields.TaggedJSONField(db_column='data', default=dict, verbose_name='internal data')),
             ],
         ),
         migrations.CreateModel(
@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('theme_identifier', models.CharField(db_index=True, max_length=64, unique=True, verbose_name='theme identifier')),
                 ('active', models.BooleanField(db_index=True, default=False, verbose_name='active')),
-                ('data', shuup.core.fields.TaggedJSONField(db_column=b'data', default=dict, verbose_name='data')),
+                ('data', shuup.core.fields.TaggedJSONField(db_column='data', default=dict, verbose_name='data')),
             ],
         ),
     ]
